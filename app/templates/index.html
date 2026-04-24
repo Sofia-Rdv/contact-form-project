@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="home-hero-section">
+    <img src="{{ url_for('static', filename='img/logo_batman2.png') }}" alt="Hero Image" class="main-page-image">
+    <div class="home-text">
+        <h1>Добро пожаловать!</h1>
+        <p>Это главная страница нашего веб-приложения на Flask</p>
+        <p>Мы создалли этот сайт, чтобы продемонстрировать возможности современной веб-разработки.</p>
+    </div>
+</div>
+{% endblock %}
