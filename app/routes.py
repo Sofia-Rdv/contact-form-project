@@ -39,3 +39,33 @@ def contact():
             return redirect(url_for("contact"))
 
     return render_template("contact.html")
+
+
+@app.errorhandler(404)
+def page_for_found(e):
+    """
+    Обработчик ошибки 404 (Страница не найдена).
+
+    Логирует путь, по которому пытался перейти пользователь,
+    и выводит кастомную страницу ошибки.
+
+    :param e: Exception: Объект ошибки.
+    :return: tuple: Шаблон ошибки и HTTP-статус 404.
+    """
+    #logger.error(f"Ошибка 404: Пользователь пытался перейти на {request.path}")
+    return render_template("error.html", message="Упс! Страница потерялась в космосе."), 404
+
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    """
+    Обработчик ошибки 500 (Внутренняя ошибка сервера).
+
+    Логирует критическую ошибку с полной трассировкой стека (traceback)
+    и выводит кастомную страницу ошибки.
+
+    :param e: Exception: Объект ошибки.
+    :return: tuple: Шаблон ошибки и HTTP-статус 500.
+    """
+    #logger.critical(f"ОШИБКА 500: {str(e)}", exc_info=True)
+    return render_template("error.html", message="Наш сервер приуныл.")
