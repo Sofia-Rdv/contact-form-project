@@ -29,7 +29,7 @@ nav a {
 .logo {
     height: 40px;
     vertical-align: middle;
-    margin-right: 20px;
+    margin-right: 20px
     }
 
 main {
@@ -94,14 +94,22 @@ footer {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1)
     }
 
-/* Картинка в левом верхнем углу */
+
 .corner-image {
     position: absolute;
     top: 20px;
-    left: 20px;
-    width: 300px;
+    width: 250px;
     height: auto;
     z-index: 1;
+    }
+/* Картинка в левом верхнем углу */
+.corner-image.left {
+    left: 20px;
+    }
+
+/* Картинка в правом верхнем углу */
+.corner-image.right {
+    right: 20px;
     }
 
 .container {
@@ -174,4 +182,10 @@ ul li {
     padding: 10px 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
 
+@media (max-width: 1100px) {
+    .corner-image {
+    display: none;
+    }
+}
