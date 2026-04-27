@@ -16,6 +16,8 @@
         </nav>
     </header>
     <main>
+        <img src="{{ url_for('static', filename='img/logo_batman2.png') }}" alt="Hero Left" class="corner-image left">
+        <img src="{{ url_for('static', filename='img/logo_batman2.png') }}" alt="Hero Right" class="corner-image right">
         <!-- Блок для вывода flesh-сообщений (успех/ошибка) -->
         {% with messages = get_flashed_messages(with_categories=true) %}
           {% if messages %}
